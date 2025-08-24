@@ -1,0 +1,51 @@
+{
+  "name": "@f9g/react",
+  "version": "1.3.2",
+  "description": "React Library for F9g",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/mirzadipradhana/f9g.git",
+  "author": "Mirza Adipradhana <madipradhana@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npx concurrently yarn:build:*",
+    "build:lib": "rimraf dist && ./scripts/build.js",
+    "build:types": "tsc && tsconfig-replace-paths --project tsconfig.json",
+    "dev": "./scripts/watch.js",
+    "test": "npx concurrently yarn:test:*",
+    "test:types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.171",
+    "@types/react": "16.8",
+    "@types/react-dom": "16.8",
+    "@f9g/adapter-firebase-rn": "1.3.2",
+    "@f9g/core": "1.2.0",
+    "concurrently": "^6.2.0",
+    "esbuild": "^0.12.6",
+    "execa": "^5.1.1",
+    "react": "16.8",
+    "react-dom": "16.8",
+    "rimraf": "^3.0.2",
+    "tsconfig-paths": "^3.9.0",
+    "tsconfig-replace-paths": "^0.0.5",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "fast-deep-equal": "^3.1.3",
+    "lodash": "^4.17.21",
+    "tiny-emitter": "^2.1.0"
+  },
+  "peerDependencies": {
+    "@f9g/f9g-adapter-gitlab": "*",
+    "@f9g/core": "1.2.0",
+    "react": ">= 16.8.x"
+  }
+}

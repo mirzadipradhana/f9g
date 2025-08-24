@@ -1,0 +1,8 @@
+node_modules
+dist
+*.log
+.idea
+.DS_Store
+.watchmanconfig
+.turbo
+config.bat
